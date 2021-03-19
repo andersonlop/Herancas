@@ -12,4 +12,7 @@ public class ContaCorrente extends Conta {
                 "chequeEspecial=" + chequeEspecial +
                 '}';
     }
+    public double getSaldo(){
+        return  this.chequeEspecial + this.saldo;
+    }
 }
