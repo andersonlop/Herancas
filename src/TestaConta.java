@@ -8,5 +8,7 @@ public class TestaConta {
 
         System.out.println("O saldo da conta corrente é R$ "+cc1.getSaldo());
 
+        ContaPoupanca p1 = new ContaPoupanca(33, 3, "Banco CCC", 10.00, 20, 0.05);
+        System.out.println("O saldo da conta poupança é R$ "+p1.getSaldo());
     }
 }
