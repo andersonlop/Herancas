@@ -1,24 +1,25 @@
 public class TestaConta {
     public static void main(String[] args){
+        Conta contas[] = new Conta[3];
 
-        ContaCorrente cc1 = new ContaCorrente(22, 1, "Banco AA", 100.00, 1000.00, 8, 500.00, 45.00);
-        // System.out.println(cc1);
-        System.out.println("Conta Corrente");
-        System.out.println("Saldo de R$ "+cc1.saldo);
-        System.out.println("Deposito de R$ "+cc1.Depositar);
-        System.out.println("Saque de R$ "+cc1.Sacar);
-        System.out.println("Limite de saque de R$ "+cc1.getSaldo());
-        System.out.println(" ");
+        ContaCorrente cc = new ContaCorrente(22, 3, "Banco 1", 100.00, 1000.00);
+        ContaPoupanca cp = new ContaPoupanca(33, 3, "Banco 1", 10.00, 20, 0.05);
+        ContaSalario cs = new ContaSalario(44,3,"Banco 1",500.00,4);
 
-        ContaPoupanca p1 = new ContaPoupanca(33, 3, "Banco CCC", 10.00, 20, 0.05, 10);
-        System.out.println("Conta Poupança");
-        System.out.println("Saldo de R$ "+p1.saldo);
-        System.out.println("Limite de saque de R$ "+p1.getSaldo());
-        System.out.println(" ");
+        contas[0] = cc;
+        contas[1] = cp;
+        contas[2] = cs;
 
-        ContaSalario s1 = new ContaSalario(44,3,"Banco CCC",500.00,4);
-        System.out.println("Conta Salário");
-        System.out.println("O saldo de R$ "+s1.getSaldo());
-        System.out.println(" ");
+        cc.sacar(400);
+        //cp.depositar(1000);
+
+
+        System.out.println("Obtendo o saldo das contas: ");
+        for(Conta conta:contas){
+            System.out.println(conta);
+            System.out.println("Saldo atual: R$ " + conta.getSaldo());
+            System.out.println("-------------");
+        }
+
     }
 }
